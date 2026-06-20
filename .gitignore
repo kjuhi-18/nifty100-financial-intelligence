@@ -8,7 +8,6 @@ __pycache__/
 
 db/*.db
 
-output/*.csv
 
 .pytest_cache/
 

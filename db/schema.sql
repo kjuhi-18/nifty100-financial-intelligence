@@ -146,9 +146,12 @@ CREATE TABLE IF NOT EXISTS prosandcons (
 CREATE TABLE IF NOT EXISTS sectors (
     id INTEGER PRIMARY KEY,
     company_id TEXT NOT NULL,
-    sector_name TEXT NOT NULL,
+    broad_sector TEXT,
+    sub_sector TEXT,
+    index_weight_pct REAL,
+    market_cap_category TEXT,
 
-    FOREIGN KEY (company_id)
+    FOREIGN KEY(company_id)
         REFERENCES companies(id)
 );
 
@@ -160,14 +163,15 @@ CREATE TABLE IF NOT EXISTS stock_prices (
     id INTEGER PRIMARY KEY,
     company_id TEXT NOT NULL,
 
-    trade_date TEXT NOT NULL,
+    date TEXT,
     open_price REAL,
     high_price REAL,
     low_price REAL,
     close_price REAL,
     volume INTEGER,
+    adjusted_close REAL,
 
-    FOREIGN KEY (company_id)
+    FOREIGN KEY(company_id)
         REFERENCES companies(id)
 );
 
@@ -178,11 +182,23 @@ CREATE TABLE IF NOT EXISTS stock_prices (
 CREATE TABLE IF NOT EXISTS financial_ratios (
     id INTEGER PRIMARY KEY,
     company_id TEXT NOT NULL,
+    year TEXT NOT NULL,
 
-    ratio_name TEXT NOT NULL,
-    ratio_value REAL,
+    net_profit_margin_pct REAL,
+    operating_profit_margin_pct REAL,
+    return_on_equity_pct REAL,
+    debt_to_equity REAL,
+    interest_coverage REAL,
+    asset_turnover REAL,
+    free_cash_flow_cr REAL,
+    capex_cr REAL,
+    earnings_per_share REAL,
+    book_value_per_share REAL,
+    dividend_payout_ratio_pct REAL,
+    total_debt_cr REAL,
+    cash_from_operations_cr REAL,
 
-    FOREIGN KEY (company_id)
+    FOREIGN KEY(company_id)
         REFERENCES companies(id)
 );
 
@@ -192,17 +208,28 @@ CREATE TABLE IF NOT EXISTS financial_ratios (
 
 CREATE TABLE IF NOT EXISTS peer_groups (
     id INTEGER PRIMARY KEY,
-
+    peer_group_name TEXT,
     company_id TEXT NOT NULL,
-    peer_company_id TEXT NOT NULL,
+    is_benchmark INTEGER,
 
-    FOREIGN KEY (company_id)
-        REFERENCES companies(id),
-
-    FOREIGN KEY (peer_company_id)
+    FOREIGN KEY(company_id)
         REFERENCES companies(id)
 );
+CREATE TABLE IF NOT EXISTS market_cap (
+    id INTEGER PRIMARY KEY,
+    company_id TEXT NOT NULL,
+    year TEXT NOT NULL,
 
+    market_cap_crore REAL,
+    enterprise_value_crore REAL,
+    pe_ratio REAL,
+    pb_ratio REAL,
+    ev_ebitda REAL,
+    dividend_yield_pct REAL,
+
+    FOREIGN KEY(company_id)
+        REFERENCES companies(id)
+);
 -- =====================================================
 -- INDEXES
 -- =====================================================
@@ -227,3 +254,5 @@ ON financial_ratios(company_id);
 
 CREATE INDEX IF NOT EXISTS idx_peer_company
 ON peer_groups(company_id);
+CREATE INDEX IF NOT EXISTS idx_market_cap_company
+ON market_cap(company_id);
