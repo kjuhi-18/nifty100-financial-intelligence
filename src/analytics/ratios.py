@@ -451,3 +451,308 @@ __all__ = [
     "validate_ratio"
 
 ]
+# --------------------------------------------------
+# Debt to Equity
+# --------------------------------------------------
+
+def debt_to_equity(
+    borrowings: float,
+    equity_capital: float,
+    reserves: float
+) -> Optional[float]:
+    """
+    Debt to Equity Ratio
+
+    Formula
+
+    Borrowings
+    -------------------------
+    Equity + Reserves
+
+    Rules
+
+    Borrowings == 0
+        return 0
+
+    Equity <= 0
+        return None
+    """
+
+    if borrowings == 0:
+        return 0.0
+
+    equity = (
+        equity_capital +
+        reserves
+    )
+
+    if equity <= 0:
+
+        logger.info(
+            "Invalid Equity for D/E"
+        )
+
+        return None
+
+    return round(
+        borrowings / equity,
+        2
+    )
+
+
+# --------------------------------------------------
+# High Leverage Flag
+# --------------------------------------------------
+
+def high_leverage_flag(
+    debt_equity: Optional[float],
+    broad_sector: Optional[str]
+) -> bool:
+    """
+    Returns True if
+
+    Debt Equity > 5
+
+    except for Financial sector.
+    """
+
+    if debt_equity is None:
+        return False
+
+    if (
+        broad_sector is not None
+        and broad_sector.lower() == "financials"
+    ):
+        return False
+
+    return debt_equity > 5
+
+
+# --------------------------------------------------
+# Interest Coverage Ratio
+# --------------------------------------------------
+
+def interest_coverage(
+    operating_profit: float,
+    other_income: float,
+    interest: float
+) -> Optional[float]:
+    """
+    Interest Coverage Ratio
+
+    Formula
+
+    Operating Profit + Other Income
+    ------------------------------------
+            Interest
+
+    interest == 0
+
+    return None
+    """
+
+    if interest == 0:
+
+        logger.info(
+            "Debt Free Company"
+        )
+
+        return None
+
+    return round(
+        (
+            operating_profit +
+            other_income
+        ) / interest,
+        2
+    )
+
+
+# --------------------------------------------------
+# Interest Coverage Label
+# --------------------------------------------------
+
+def interest_coverage_label(
+    icr: Optional[float]
+) -> str:
+    """
+    Display Label
+
+    None
+
+    =>
+    Debt Free
+    """
+
+    if icr is None:
+        return "Debt Free"
+
+    return "Applicable"
+
+
+# --------------------------------------------------
+# Interest Coverage Warning
+# --------------------------------------------------
+
+def interest_coverage_warning(
+    icr: Optional[float]
+) -> bool:
+    """
+    Company may not be
+    able to cover interest.
+
+    Warning
+
+    ICR < 1.5
+    """
+
+    if icr is None:
+        return False
+
+    return icr < 1.5
+# --------------------------------------------------
+# Net Debt
+# --------------------------------------------------
+
+def net_debt(
+    borrowings: float,
+    investments: float
+) -> float:
+    """
+    Net Debt
+
+    Formula
+
+    Borrowings - Investments
+
+    Investments are used as a
+    proxy for liquid assets.
+    """
+
+    return round(
+        borrowings - investments,
+        2
+    )
+
+
+# --------------------------------------------------
+# Asset Turnover
+# --------------------------------------------------
+
+def asset_turnover(
+    sales: float,
+    total_assets: float
+) -> Optional[float]:
+    """
+    Asset Turnover
+
+    Formula
+
+    Sales
+    ----------------
+    Total Assets
+
+    Returns None if
+    total_assets <= 0
+    """
+
+    if total_assets <= 0:
+
+        logger.info(
+            "Invalid Total Assets for Asset Turnover."
+        )
+
+        return None
+
+    return round(
+        sales / total_assets,
+        2
+    )
+
+
+# --------------------------------------------------
+# Combined Leverage & Efficiency Engine
+# --------------------------------------------------
+
+def calculate_leverage_ratios(
+    row: dict
+) -> dict:
+    """
+    Computes leverage
+    and efficiency KPIs
+    for a company-year.
+    """
+
+    ratios = {}
+
+    de = debt_to_equity(
+        row.get("borrowings", 0),
+        row.get("equity_capital", 0),
+        row.get("reserves", 0)
+    )
+
+    ratios["debt_to_equity"] = de
+
+    ratios["high_leverage_flag"] = high_leverage_flag(
+        de,
+        row.get("broad_sector")
+    )
+
+    icr = interest_coverage(
+        row.get("operating_profit", 0),
+        row.get("other_income", 0),
+        row.get("interest", 0)
+    )
+
+    ratios["interest_coverage"] = icr
+
+    ratios["icr_label"] = interest_coverage_label(
+        icr
+    )
+
+    ratios["interest_warning_flag"] = (
+        interest_coverage_warning(
+            icr
+        )
+    )
+
+    ratios["net_debt"] = net_debt(
+        row.get("borrowings", 0),
+        row.get("investments", 0)
+    )
+
+    ratios["asset_turnover"] = asset_turnover(
+        row.get("sales", 0),
+        row.get("total_assets", 0)
+    )
+
+    return ratios
+
+
+# --------------------------------------------------
+# Update Public Exports
+# --------------------------------------------------
+
+__all__.extend(
+
+    [
+
+        "debt_to_equity",
+
+        "high_leverage_flag",
+
+        "interest_coverage",
+
+        "interest_coverage_label",
+
+        "interest_coverage_warning",
+
+        "net_debt",
+
+        "asset_turnover",
+
+        "calculate_leverage_ratios"
+
+    ]
+
+)
