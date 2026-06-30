@@ -1,7 +1,7 @@
 from pathlib import Path
 from typing import Optional
 import logging
-
+import pandas as pd
 
 # --------------------------------------------------
 # Logging
@@ -38,13 +38,15 @@ def free_cash_flow(
     usually negative.
     """
 
+    if pd.isna(operating_activity):
+        return None
+
+    if pd.isna(investing_activity):
+        return None
+
     return round(
-
-        operating_activity +
-        investing_activity,
-
-        2
-
+    operating_activity + investing_activity,
+    2
     )
 
 
@@ -159,15 +161,23 @@ def capex_intensity(
     x100
     """
 
-    if sales == 0:
-
+    if pd.isna(investing_activity):
         return {
+        "value": None,
+        "label": None
+    }
 
-            "value": None,
+    if pd.isna(sales):
+        return {
+        "value": None,
+        "label": None
+    }
 
-            "label": None
-
-        }
+    if sales == 0:
+        return {
+        "value": None,
+        "label": None
+    }
 
     intensity = round(
 
@@ -222,14 +232,13 @@ def fcf_conversion_rate(
     x100
     """
 
+    if pd.isna(free_cash_flow_value):
+        return None
+
+    if pd.isna(operating_profit):
+        return None
+
     if operating_profit == 0:
-
-        logger.info(
-
-            "Operating Profit is zero."
-
-        )
-
         return None
 
     return round(
@@ -263,6 +272,14 @@ def capital_allocation_pattern(
     + = Positive
     - = Negative
     """
+    if pd.isna(operating_activity):
+        return "Unknown"
+
+    if pd.isna(investing_activity):
+        return "Unknown"
+
+    if pd.isna(financing_activity):
+        return "Unknown"
 
     cfo = "+" if operating_activity >= 0 else "-"
     cfi = "+" if investing_activity >= 0 else "-"

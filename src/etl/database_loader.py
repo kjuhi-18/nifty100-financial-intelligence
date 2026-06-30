@@ -110,7 +110,19 @@ class DatabaseLoader:
                 )
 
         rows_loaded = len(df)
+        if table_name == "financial_ratios":
 
+            before = len(df)
+
+            df = df.drop_duplicates(
+            subset=["company_id", "year"],
+            keep="first"
+            )
+
+            removed = before - len(df)
+
+            if removed:
+                print(f"Removed {removed} duplicate rows")
         # ---------------------------------------------
         # Insert into SQLite
         # ---------------------------------------------

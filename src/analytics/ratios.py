@@ -1,7 +1,7 @@
 from pathlib import Path
 import logging
 from typing import Optional
-
+import pandas as pd
 
 # --------------------------------------------------
 # Logging
@@ -164,7 +164,11 @@ def return_on_equity(
 
     x100
     """
+    if pd.isna(equity_capital):
+        return None
 
+    if pd.isna(reserves):
+        return None
     denominator = (
         equity_capital +
         reserves
@@ -215,7 +219,20 @@ def return_on_capital_employed(
     +
     Interest
     """
+    if pd.isna(operating_profit):
+        return None
 
+    if pd.isna(interest):
+        return None
+
+    if pd.isna(equity_capital):
+        return None
+
+    if pd.isna(reserves):
+        return None
+
+    if pd.isna(borrowings):
+        return None
     ebit = (
         operating_profit +
         interest
@@ -276,13 +293,10 @@ def return_on_assets(
     Returns None if
     total_assets <= 0
     """
+    if pd.isna(total_assets):
+        return None
 
     if total_assets <= 0:
-
-        logger.info(
-            "Invalid Total Assets."
-        )
-
         return None
 
     return percentage(
@@ -478,13 +492,19 @@ def debt_to_equity(
         return None
     """
 
+    if pd.isna(borrowings):
+        return None
+
+    if pd.isna(equity_capital):
+        return None
+
+    if pd.isna(reserves):
+        return None
+
     if borrowings == 0:
         return 0.0
 
-    equity = (
-        equity_capital +
-        reserves
-    )
+    equity = equity_capital + reserves
 
     if equity <= 0:
 
@@ -551,12 +571,16 @@ def interest_coverage(
     return None
     """
 
+    if pd.isna(interest):
+        return None
+
+    if pd.isna(operating_profit):
+        return None
+
+    if pd.isna(other_income):
+        return None
+
     if interest == 0:
-
-        logger.info(
-            "Debt Free Company"
-        )
-
         return None
 
     return round(
@@ -656,12 +680,13 @@ def asset_turnover(
     total_assets <= 0
     """
 
+    if pd.isna(sales):
+        return None
+
+    if pd.isna(total_assets):
+        return None
+
     if total_assets <= 0:
-
-        logger.info(
-            "Invalid Total Assets for Asset Turnover."
-        )
-
         return None
 
     return round(
