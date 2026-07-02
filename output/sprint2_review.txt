@@ -1,0 +1,54 @@
+======================================================================
+SPRINT 2 RETROSPECTIVE
+======================================================================
+
+Sprint Scope
+----------------------------------------
+• Profitability Ratios
+• Leverage Ratios
+• Efficiency Ratios
+• CAGR Engine
+• Cash Flow KPIs
+• Capital Allocation
+• Financial Ratio Database
+
+Formula Decisions
+----------------------------------------
+• ROE = Net Profit / (Equity Capital + Reserves)
+• Debt to Equity = Borrowings / Shareholder Equity
+• Asset Turnover = Sales / Total Assets
+• Interest Coverage = Operating Profit / Interest
+• Free Cash Flow = CFO + Investing Activity
+• CapEx Intensity = abs(Investing Activity) / Sales × 100
+• Revenue, PAT and EPS CAGR computed for 3, 5 and 10 years
+
+Edge Case Handling
+----------------------------------------
+• Financial sector companies excluded from Debt/Equity warning
+• CAGR handles ZERO_BASE
+• CAGR handles INSUFFICIENT history
+• CAGR handles TURNAROUND
+• CAGR handles DECLINE_TO_LOSS
+• CAGR handles BOTH_NEGATIVE
+
+ROE / ROCE Review
+----------------------------------------
+Computed ratios are compared against companies.xlsx.
+Differences greater than 5% are logged.
+Each anomaly is categorized as:
+  - Data Source Issue
+  - Version Difference
+  - Formula Discrepancy
+
+Sprint Outcome
+----------------------------------------
+Row Count                      PASS
+Required Columns               PASS
+Null Only Columns              PASS
+Capital Allocation CSV         PASS
+Edge Case Log                  PASS
+Screener Preview               FAIL
+
+======================================================================
+End of Sprint Review
+======================================================================
