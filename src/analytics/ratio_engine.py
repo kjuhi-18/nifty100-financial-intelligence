@@ -695,6 +695,7 @@ class RatioEngine:
             "net_profit_margin_pct",
             "operating_profit_margin_pct",
             "return_on_equity_pct",
+            "return_on_capital_employed_pct",
 
             "debt_to_equity",
             "interest_coverage",
@@ -805,6 +806,7 @@ class RatioEngine:
             "operating_profit_margin_pct",
 
             "return_on_equity_pct",
+            "return_on_capital_employed_pct",
 
             "debt_to_equity",
 
@@ -1092,6 +1094,7 @@ class RatioEngine:
             "company_id",
             "year",
             "return_on_equity_pct",
+            "return_on_capital_employed_pct",
             "revenue_cagr_5yr",
             "composite_quality_score"
 
