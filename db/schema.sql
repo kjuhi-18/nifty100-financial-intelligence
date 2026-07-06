@@ -195,6 +195,8 @@ CREATE TABLE financial_ratios (
 
     return_on_equity_pct REAL,
 
+    return_on_capital_employed_pct REAL,
+    
     debt_to_equity REAL,
 
     interest_coverage REAL,
