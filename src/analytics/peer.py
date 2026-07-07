@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from math import pi
 import numpy as np
 import pandas as pd
-
+from openpyxl.styles import Font
 
 # ==========================================================
 # Project Paths
@@ -1692,6 +1692,695 @@ class PeerEngine:
 
         print("\nReady for Day 20")
 # ==========================================================
+# Prepare Peer Comparison Dataset
+# ==========================================================
+
+    def prepare_peer_comparison(self):
+
+        print("\nPreparing Peer Comparison Dataset...\n")
+
+        conn = sqlite3.connect(DB_PATH)
+
+        ratios = pd.read_sql(
+
+            "SELECT * FROM financial_ratios",
+
+            conn
+
+        )
+
+        peers = pd.read_sql(
+
+            "SELECT * FROM peer_percentiles",
+
+            conn
+
+        )
+
+        companies = pd.read_sql(
+
+            "SELECT id AS company_id, company_name FROM companies",
+
+            conn
+
+        )
+
+        conn.close()
+
+        latest = (
+
+            ratios
+
+            .sort_values(
+
+                ["company_id", "year"])
+
+            .groupby(
+
+        "company_id",
+
+        as_index=False
+
+    )
+
+            .tail(1)
+
+        )
+
+        latest = latest.merge(
+
+            companies,
+
+            on="company_id",
+
+            how="left"
+
+        )
+
+        latest = latest.merge(
+
+            self.peer_groups[
+
+                [
+
+                    "company_id",
+
+                    "peer_group_name",
+
+                    "is_benchmark"
+
+                ]
+
+            ],
+
+            on="company_id",
+
+            how="left"
+
+        )
+
+        self.peer_report = latest
+        latest["peer_group_name"] = latest["peer_group_name"].fillna(
+    "No peer group assigned"
+)
+
+        latest["is_benchmark"] = latest["is_benchmark"].fillna(False)
+        self.peer_percentiles = peers
+
+        print(
+
+            f"Companies : {len(self.peer_report)}"
+
+        )
+
+        print(
+
+            f"Percentile Rows : {len(self.peer_percentiles)}"
+
+        )
+
+        print()
+
+        print(
+
+            self.peer_report.head()
+
+        )
+# ==========================================================
+# Verify Peer Groups
+# ==========================================================
+
+    def verify_peer_groups(self):
+
+        print("\n" + "=" * 70)
+
+        print("PEER GROUPS")
+
+        print("=" * 70)
+
+        groups = (
+
+            self.peer_report
+
+            .dropna(
+
+                subset=["peer_group_name"]
+
+            )
+
+            ["peer_group_name"]
+
+            .unique()
+
+        )
+
+        groups = sorted(groups)
+
+        print(
+
+            f"Peer Groups : {len(groups)}"
+
+        )
+
+        for g in groups:
+
+            print(g)
+    # ==========================================================
+    # Create Peer Comparison Workbook
+    # ==========================================================
+
+    def create_peer_workbook(self):
+
+        print("\nCreating Peer Comparison Workbook...\n")
+
+        output_file = OUTPUT_DIR / "peer_comparison.xlsx"
+
+        writer = pd.ExcelWriter(
+
+            output_file,
+
+            engine="openpyxl"
+
+        )
+
+        groups = (
+
+            self.peer_report
+
+            .dropna(subset=["peer_group_name"])
+
+            ["peer_group_name"]
+
+            .unique()
+
+        )
+
+        groups = sorted(groups)
+
+        exported = 0
+
+        for group in groups:
+
+            if group == "No peer group assigned":
+
+                continue
+
+            self.export_peer_sheet(
+
+                writer,
+
+                group
+
+            )
+
+            exported += 1
+
+        writer.close()
+
+        print(f"Sheets Created : {exported}")
+
+        print(f"Saved : {output_file}")
+
+
+# ==========================================================
+# Export Single Peer Sheet
+# ==========================================================
+
+    def export_peer_sheet(
+
+        self,
+
+        writer,
+
+        peer_group
+
+    ):
+
+        companies = self.peer_report[
+
+            self.peer_report["peer_group_name"]
+
+            == peer_group
+
+        ].copy()
+
+        metrics = self.peer_percentiles[
+
+            self.peer_percentiles["peer_group_name"]
+
+            == peer_group
+
+        ]
+
+        pivot = (
+
+            metrics
+
+            .pivot(
+
+                index="company_id",
+
+                columns="metric",
+
+                values="percentile_rank"
+
+            )
+
+            .reset_index()
+
+        )
+
+        pivot.columns = [
+
+            c if c == "company_id"
+
+            else f"{c}_pct_rank"
+
+            for c in pivot.columns
+
+        ]
+
+        companies = companies.merge(
+
+            pivot,
+
+            on="company_id",
+
+            how="left"
+
+        )
+        
+        companies = companies.sort_values(
+
+            "composite_quality_score",
+
+            ascending=False
+
+        )
+
+        sheet = peer_group[:31]
+
+        companies.to_excel(
+
+            writer,
+
+            sheet_name=sheet,
+
+            index=False
+
+        )
+
+        worksheet = writer.sheets[sheet]
+
+        worksheet.freeze_panes = "A2"
+
+        for cell in worksheet[1]:
+
+            cell.font = Font(
+
+                bold=True
+
+            )
+
+        for column_cells in worksheet.columns:
+
+            length = max(
+
+                len(str(cell.value))
+
+                if cell.value is not None
+
+                else 0
+
+                for cell in column_cells
+
+            )
+
+            worksheet.column_dimensions[
+
+                column_cells[0].column_letter
+
+            ].width = min(
+
+                max(length + 2, 12),
+
+                35
+
+            )
+# ==========================================================
+# Apply Excel Formatting
+# ==========================================================
+
+    def format_peer_workbook(self):
+
+        print("\nFormatting Peer Comparison Workbook...\n")
+
+        from openpyxl import load_workbook
+        from openpyxl.styles import PatternFill, Font
+
+        workbook_path = OUTPUT_DIR / "peer_comparison.xlsx"
+
+        wb = load_workbook(workbook_path)
+
+        green_fill = PatternFill(
+            fill_type="solid",
+            start_color="C6EFCE",
+            end_color="C6EFCE"
+        )
+
+        yellow_fill = PatternFill(
+            fill_type="solid",
+            start_color="FFF2CC",
+            end_color="FFF2CC"
+        )
+
+        red_fill = PatternFill(
+            fill_type="solid",
+            start_color="F4CCCC",
+            end_color="F4CCCC"
+        )
+
+        gold_fill = PatternFill(
+            fill_type="solid",
+            start_color="FFD966",
+            end_color="FFD966"
+        )
+
+        header_fill = PatternFill(
+            fill_type="solid",
+            start_color="D9EAD3",
+            end_color="D9EAD3"
+        )
+
+        for ws in wb.worksheets:
+
+            # Header formatting
+            for cell in ws[1]:
+
+                cell.font = Font(bold=True)
+
+                cell.fill = header_fill
+
+            headers = [
+
+                c.value
+
+                for c in ws[1]
+
+            ]
+
+            benchmark_col = None
+
+            for i, h in enumerate(headers, start=1):
+
+                if h == "is_benchmark":
+
+                    benchmark_col = i
+
+                    break
+
+            # Benchmark highlight
+            if benchmark_col:
+
+                for row in range(2, ws.max_row + 1):
+
+                    if ws.cell(row, benchmark_col).value is True:
+
+                        for col in range(1, ws.max_column + 1):
+
+                            ws.cell(row, col).fill = gold_fill
+
+            # Percentile colouring
+            for col in range(1, ws.max_column + 1):
+
+                header = ws.cell(1, col).value
+
+                if header is None:
+
+                    continue
+
+                if not str(header).endswith("_pct_rank"):
+
+                    continue
+
+                for row in range(2, ws.max_row + 1):
+
+                    cell = ws.cell(row, col)
+
+                    value = cell.value
+
+                    if value is None:
+
+                        continue
+
+                    try:
+
+                        value = float(value)
+
+                    except:
+
+                        continue
+
+                    if value >= 75:
+
+                        cell.fill = green_fill
+
+                    elif value <= 25:
+
+                        cell.fill = red_fill
+
+                    else:
+
+                        cell.fill = yellow_fill
+
+            ws.auto_filter.ref = ws.dimensions
+
+        wb.save(workbook_path)
+
+        print("Workbook formatting completed.")
+# ==========================================================
+# Add Peer Summary Rows
+# ==========================================================
+
+    def add_peer_summary(self):
+
+        print("\nAdding Peer Group Summary Rows...\n")
+
+        from openpyxl import load_workbook
+        from openpyxl.styles import Font, PatternFill
+
+        workbook_path = OUTPUT_DIR / "peer_comparison.xlsx"
+
+        wb = load_workbook(workbook_path)
+
+        summary_fill = PatternFill(
+            fill_type="solid",
+            start_color="D0E0E3",
+            end_color="D0E0E3"
+        )
+
+        for ws in wb.worksheets:
+
+            max_row = ws.max_row
+            max_col = ws.max_column
+
+            summary_row = max_row + 2
+
+            ws.cell(summary_row, 1).value = "Peer Median"
+
+            ws.cell(summary_row, 1).font = Font(bold=True)
+
+            ws.cell(summary_row, 1).fill = summary_fill
+
+            headers = [
+                ws.cell(1, c).value
+                for c in range(1, max_col + 1)
+            ]
+
+            for col in range(2, max_col + 1):
+
+                header = headers[col - 1]
+
+                if header is None:
+                    continue
+
+                values = []
+
+                for row in range(2, max_row + 1):
+
+                    value = ws.cell(row, col).value
+
+                    if isinstance(value, (int, float)):
+
+                        values.append(value)
+
+                if values:
+
+                    values = sorted(values)
+
+                    n = len(values)
+
+                    if n % 2 == 1:
+
+                        median = values[n // 2]
+
+                    else:
+
+                        median = (
+                            values[n // 2 - 1]
+                            + values[n // 2]
+                        ) / 2
+
+                    cell = ws.cell(summary_row, col)
+
+                    cell.value = round(median, 2)
+
+                    cell.font = Font(bold=True)
+
+                    cell.fill = summary_fill
+
+            count_row = summary_row + 1
+
+            ws.cell(count_row, 1).value = "Company Count"
+
+            ws.cell(count_row, 1).font = Font(bold=True)
+
+            ws.cell(count_row, 1).fill = summary_fill
+
+            ws.cell(count_row, 2).value = max_row - 1
+
+            ws.cell(count_row, 2).font = Font(bold=True)
+
+            ws.cell(count_row, 2).fill = summary_fill
+
+        wb.save(workbook_path)
+
+        print("Summary rows added successfully.")
+# ==========================================================
+# Final Peer Workbook Validation
+# ==========================================================
+
+    def validate_peer_workbook(self):
+
+        print("\n" + "=" * 70)
+        print("PEER COMPARISON WORKBOOK VALIDATION")
+        print("=" * 70)
+
+        from openpyxl import load_workbook
+
+        workbook_path = OUTPUT_DIR / "peer_comparison.xlsx"
+
+        wb = load_workbook(workbook_path)
+
+        sheets = wb.sheetnames
+
+        print(f"Workbook Exists : {'PASS' if workbook_path.exists() else 'FAIL'}")
+        print(f"Sheets Created  : {len(sheets)}")
+
+        expected_groups = (
+            self.peer_report
+            .dropna(subset=["peer_group_name"])
+            ["peer_group_name"]
+            .unique()
+        )
+
+        expected_groups = [
+            g for g in expected_groups
+            if g != "No peer group assigned"
+        ]
+
+        print(f"Expected Sheets : {len(expected_groups)}")
+
+        if len(sheets) == len(expected_groups):
+            print("Sheet Count     : PASS")
+        else:
+            print("Sheet Count     : WARNING")
+
+        print("\nWorksheet Summary")
+        print("-" * 40)
+
+        for sheet in sheets:
+
+            ws = wb[sheet]
+
+            print(
+                f"{sheet:<25}"
+                f" Rows : {ws.max_row:<4}"
+                f" Columns : {ws.max_column}"
+            )
+
+        print("\nWorkbook validation completed.")
+
+
+# ==========================================================
+# Final Deliverables Check
+# ==========================================================
+
+    def verify_day20_outputs(self):
+
+        print("\n" + "=" * 70)
+        print("DAY 20 OUTPUT VERIFICATION")
+        print("=" * 70)
+
+        workbook = OUTPUT_DIR / "peer_comparison.xlsx"
+
+        print(
+            f"peer_comparison.xlsx : "
+            f"{'PASS' if workbook.exists() else 'FAIL'}"
+        )
+
+        radar = OUTPUT_DIR / "radar_report.csv"
+
+        print(
+            f"radar_report.csv     : "
+            f"{'PASS' if radar.exists() else 'FAIL'}"
+        )
+
+        charts = len(list(RADAR_DIR.glob("*.png")))
+
+        print(f"Radar Charts         : {charts}")
+
+        groups = self.peer_report["peer_group_name"]
+
+        groups = groups[
+        groups != "No peer group assigned"
+]
+
+        print(f"Peer Groups          : {groups.nunique()}")
+
+        print(f"Companies            : {len(self.peer_report)}")
+
+
+# ==========================================================
+# Day 20 Summary
+# ==========================================================
+
+    def day20_summary(self):
+
+        print("\n" + "=" * 70)
+        print("SPRINT 3 - DAY 20 COMPLETED")
+        print("=" * 70)
+
+        print("\nDeliverables")
+        print("----------------------------------------")
+
+        print("✓ Peer comparison dataset prepared")
+        print("✓ Workbook generated")
+        print("✓ 11 peer group worksheets created")
+        print("✓ Percentile rank columns exported")
+        print("✓ Green / Yellow / Red percentile formatting")
+        print("✓ Benchmark rows highlighted")
+        print("✓ Peer median summary rows added")
+        print("✓ Company count rows added")
+        print("✓ Workbook validation completed")
+
+        print("\nOutput Files")
+        print("----------------------------------------")
+
+        print("✓ output/peer_comparison.xlsx")
+
+        print("\nReady for Day 21")
+# ==========================================================
 # Main
 # ==========================================================
 
@@ -1748,6 +2437,17 @@ def main():
     engine.validate_radar_outputs()
     engine.final_day19_verification()
 
-    engine.day19_summary()    
+    engine.day19_summary()
+    engine.prepare_peer_comparison()
+
+    engine.verify_peer_groups()
+    engine.create_peer_workbook()
+    engine.format_peer_workbook()
+    engine.add_peer_summary()
+    engine.validate_peer_workbook()
+
+    engine.verify_day20_outputs()
+
+    engine.day20_summary()   
 if __name__ == "__main__":
     main()
