@@ -1,0 +1,16 @@
+company_id,metric_type,text
+SBILIFE,Sales CAGR,TTM:            43%
+SBILIFE,Profit CAGR,TTM:                 18%
+SBILIFE,ROE,Last Year:      12%
+TCS,Sales CAGR,TTM:            5%             
+TCS,Profit CAGR,TTM:                 8%
+TCS,ROE,Last Year:       52%
+WIPRO,Sales CAGR,TTM:           -3%
+WIPRO,Profit CAGR,TTM:                 1%
+WIPRO,ROE,Last Year:       14%
+HDFCBANK,Sales CAGR,TTM:            47%
+HDFCBANK,Profit CAGR,TTM:                27%
+HDFCBANK,ROE,Last Year:    17%
+INFY,Sales CAGR,TTM:            3%
+INFY,Profit CAGR,TTM:                 8%
+INFY,ROE,Last Year:     32%

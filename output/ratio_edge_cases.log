@@ -1805,3 +1805,6 @@ ROCE mismatches : 579
 2026-07-05 00:37:58,102 | INFO | ================================================================================
 2026-07-05 00:37:58,102 | INFO | ROE mismatches  : 526
 2026-07-05 00:37:58,102 | INFO | ROCE mismatches : 579
+2026-07-19 23:43:55,057 | INFO | Cash Flow Intelligence exported : output/cashflow_intelligence.xlsx
+2026-07-19 23:43:55,074 | INFO | Distress Alerts exported : output/distress_alerts.csv
+2026-07-19 23:52:07,491 | INFO | Capital allocation file created: output/capital_allocation.csv

@@ -1,0 +1,13 @@
+company_id,metric_type,parsed_value,ratio_engine_value,difference_pct,manual_review
+HDFCBANK,ROE,17.0,16.94,0.06,False
+SBILIFE,ROE,14.0,21.69,7.69,True
+SBILIFE,ROE,13.0,21.69,8.69,True
+TCS,ROE,40.0,46.78,6.78,True
+TCS,ROE,44.0,46.78,2.78,False
+TCS,ROE,47.0,46.78,0.22,False
+HDFCBANK,ROE,17.0,16.94,0.06,False
+HDFCBANK,ROE,17.0,16.94,0.06,False
+INFY,ROE,27.0,31.97,4.97,False
+INFY,ROE,29.0,31.97,2.97,False
+INFY,ROE,31.0,31.97,0.97,False
+SBILIFE,ROE,16.0,21.69,5.69,True

@@ -1,0 +1,704 @@
+company_id,type,rule_id,text,confidence_pct
+LODHA,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,62.0
+HAVELLS,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HAVELLS,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HAVELLS,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BEL,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+BEL,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+KOTAKBANK,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+KOTAKBANK,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+LT,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+LT,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+LT,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ADANIGREEN,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+SBILIFE,Pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden.,100.0
+SBILIFE,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+LICI,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+LICI,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+LICI,Pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden.,100.0
+LICI,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+LICI,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ADANIPORTS,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ADANIPORTS,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+ADANIPORTS,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+HDFCBANK,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HDFCBANK,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BHEL,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+HDFCLIFE,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+HDFCLIFE,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+TITAN,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,94.4
+TITAN,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TITAN,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BAJFINANCE,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+BAJFINANCE,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HCLTECH,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,66.0
+HCLTECH,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HCLTECH,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+JSWSTEEL,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+CHOLAFIN,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+CHOLAFIN,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HEROMOTOCO,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,62.3
+HEROMOTOCO,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HEROMOTOCO,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+HEROMOTOCO,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HEROMOTOCO,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+INDUSINDBK,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+BHARTIARTL,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+BHARTIARTL,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+BHARTIARTL,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+SHREECEM,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+SHREECEM,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+SHREECEM,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+IOC,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,67.1
+IOC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+IOC,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+IOC,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ICICIPRULI,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ICICIPRULI,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+ICICIPRULI,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+IRCTC,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,88.8
+IRCTC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+IRCTC,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,78.0
+IRCTC,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+IRCTC,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+SHRIRAMFIN,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,68.0
+ABB,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,84.9
+ABB,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ABB,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+ABB,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TVSMOTOR,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,72.4
+IRFC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+IRFC,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+IRFC,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ICICIGI,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ICICIGI,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+ICICIGI,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+ICICIGI,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ITC,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,75.7
+ITC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ITC,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,84.0
+ITC,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+ICICIBANK,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ICICIBANK,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ADANIENSOL,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ADANIENSOL,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,70.0
+HINDUNILVR,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,60.1
+HINDUNILVR,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HINDUNILVR,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+HINDUNILVR,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+TRENT,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,92.6
+TRENT,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TRENT,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+JINDALSTEL,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+JIOFIN,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+JIOFIN,Pro,P3,Debt-free balance sheet provides financial flexibility and eliminates interest burden.,100.0
+JIOFIN,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+JIOFIN,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HINDALCO,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HINDALCO,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+HINDALCO,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HINDALCO,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+PIDILITIND,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,61.6
+PIDILITIND,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+PIDILITIND,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+PIDILITIND,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+JSWENERGY,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+TORNTPHARM,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,68.3
+TORNTPHARM,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TORNTPHARM,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,72.0
+TORNTPHARM,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ADANIENT,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+RELIANCE,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+RELIANCE,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TECHM,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TECHM,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+DMART,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+DMART,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+LTIM,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,65.8
+LTIM,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+LTIM,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+LTIM,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+DLF,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+DLF,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,76.0
+DLF,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BRITANNIA,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+BRITANNIA,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+BRITANNIA,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+NHPC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+NHPC,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+NHPC,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+NHPC,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BAJAJ-AUTO,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,73.2
+BAJAJ-AUTO,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+BAJAJ-AUTO,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+BAJAJ-AUTO,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+DIVISLAB,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+DIVISLAB,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,66.0
+DIVISLAB,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+DIVISLAB,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TATAPOWER,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TATAPOWER,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+PNB,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+NTPC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+NTPC,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,68.0
+NTPC,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+DABUR,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+DABUR,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+DABUR,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TATACONSUM,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TATACONSUM,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+TATACONSUM,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ONGC,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ONGC,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+ONGC,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+COALINDIA,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+COALINDIA,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+COALINDIA,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+COALINDIA,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+COALINDIA,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+AXISBANK,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+CANBK,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+CANBK,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TATAMOTORS,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,94.9
+TATAMOTORS,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TATAMOTORS,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+PFC,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,72.3
+PFC,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,84.0
+CIPLA,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+CIPLA,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+CIPLA,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+CIPLA,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BAJAJFINSV,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,71.7
+BAJAJFINSV,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,84.0
+INFY,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,79.6
+INFY,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+INFY,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+POWERGRID,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+POWERGRID,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+POWERGRID,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+DRREDDY,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+DRREDDY,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,66.0
+DRREDDY,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+DRREDDY,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+NESTLEIND,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+NESTLEIND,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+NESTLEIND,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+NESTLEIND,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TATASTEEL,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HAL,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+HAL,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+HAL,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,74.0
+HAL,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+HAL,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BOSCHLTD,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,61.3
+BOSCHLTD,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+BOSCHLTD,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+BOSCHLTD,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+M&M,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+ADANIPOWER,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+ADANIPOWER,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ADANIPOWER,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,82.0
+AMBUJACEM,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+GRASIM,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+SUNPHARMA,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+SUNPHARMA,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,66.0
+SUNPHARMA,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+SUNPHARMA,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+GODREJCP,Pro,P0,Business continues to operate with stable financial reporting and remains an active constituent in the analysis universe.,65.0
+RECLTD,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,60.8
+RECLTD,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+MARUTI,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+MARUTI,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+MARUTI,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+TCS,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+TCS,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+TCS,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,64.0
+TCS,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+TCS,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+GAIL,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+GAIL,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+GAIL,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+BPCL,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,91.0
+BPCL,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+BPCL,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+BPCL,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+INDIGO,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,100.0
+INDIGO,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+INDIGO,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+INDIGO,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+BAJAJHLDNG,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+BAJAJHLDNG,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+BAJAJHLDNG,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+BAJAJHLDNG,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+ASIANPAINT,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,79.4
+ASIANPAINT,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+ASIANPAINT,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+ASIANPAINT,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+MOTHERSON,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+MOTHERSON,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+EICHERMOT,Pro,P1,Consistently high return on equity above 20% demonstrates exceptional capital efficiency.,64.3
+EICHERMOT,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+EICHERMOT,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,62.0
+EICHERMOT,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+EICHERMOT,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+NAUKRI,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,66.0
+NAUKRI,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+BANKBARODA,Pro,P5,Operating profit margin above 25% indicates strong pricing power and cost discipline.,100.0
+APOLLOHOSP,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+APOLLOHOSP,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+SIEMENS,Pro,P2,Strong free cash flow generation signals healthy business fundamentals.,90.0
+SIEMENS,Pro,P7,Very high interest coverage reflects negligible financial stress from debt servicing.,95.0
+SIEMENS,Pro,P8,Dividend payout is supported by positive free cash flow.,85.0
+LODHA,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+LODHA,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+LODHA,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+LODHA,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+LODHA,Con,C11,Overall financial quality score is relatively weak.,85.0
+LODHA,Con,C12,Return on equity below 10% indicates limited shareholder returns.,62.2
+HAVELLS,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HAVELLS,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HAVELLS,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HAVELLS,Con,C11,Overall financial quality score is relatively weak.,85.0
+BEL,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+BEL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BEL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BEL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BEL,Con,C11,Overall financial quality score is relatively weak.,85.0
+KOTAKBANK,Con,C1,Debt-to-equity ratio of 4.00 is elevated and warrants monitoring.,64.0
+KOTAKBANK,Con,C3,Operating margin below 10% indicates weak operating profitability.,100.0
+KOTAKBANK,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+KOTAKBANK,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+KOTAKBANK,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+KOTAKBANK,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+KOTAKBANK,Con,C11,Overall financial quality score is relatively weak.,85.0
+LT,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+LT,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+LT,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+LT,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIGREEN,Con,C1,Debt-to-equity ratio of 6.60 is elevated and warrants monitoring.,69.2
+ADANIGREEN,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+ADANIGREEN,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ADANIGREEN,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ADANIGREEN,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ADANIGREEN,Con,C11,Overall financial quality score is relatively weak.,85.0
+SBILIFE,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+SBILIFE,Con,C3,Operating margin below 10% indicates weak operating profitability.,80.0
+SBILIFE,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+SBILIFE,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+SBILIFE,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+SBILIFE,Con,C11,Overall financial quality score is relatively weak.,85.0
+LICI,Con,C3,Operating margin below 10% indicates weak operating profitability.,72.0
+LICI,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+LICI,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+LICI,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+LICI,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIPORTS,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ADANIPORTS,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ADANIPORTS,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ADANIPORTS,Con,C11,Overall financial quality score is relatively weak.,85.0
+HDFCBANK,Con,C1,Debt-to-equity ratio of 6.81 is elevated and warrants monitoring.,69.6
+HDFCBANK,Con,C3,Operating margin below 10% indicates weak operating profitability.,100.0
+HDFCBANK,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HDFCBANK,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+HDFCBANK,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HDFCBANK,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HDFCBANK,Con,C11,Overall financial quality score is relatively weak.,85.0
+BHEL,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+BHEL,Con,C3,Operating margin below 10% indicates weak operating profitability.,74.0
+BHEL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BHEL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BHEL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BHEL,Con,C11,Overall financial quality score is relatively weak.,85.0
+BHEL,Con,C12,Return on equity below 10% indicates limited shareholder returns.,77.7
+HDFCLIFE,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+HDFCLIFE,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HDFCLIFE,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HDFCLIFE,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HDFCLIFE,Con,C11,Overall financial quality score is relatively weak.,85.0
+TITAN,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TITAN,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+TITAN,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TITAN,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TITAN,Con,C11,Overall financial quality score is relatively weak.,85.0
+BAJFINANCE,Con,C1,Debt-to-equity ratio of 3.82 is elevated and warrants monitoring.,63.6
+BAJFINANCE,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+BAJFINANCE,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BAJFINANCE,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BAJFINANCE,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BAJFINANCE,Con,C11,Overall financial quality score is relatively weak.,85.0
+HCLTECH,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HCLTECH,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HCLTECH,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HCLTECH,Con,C11,Overall financial quality score is relatively weak.,85.0
+JSWSTEEL,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+JSWSTEEL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+JSWSTEEL,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+JSWSTEEL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+JSWSTEEL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+JSWSTEEL,Con,C11,Overall financial quality score is relatively weak.,85.0
+CHOLAFIN,Con,C1,Debt-to-equity ratio of 6.86 is elevated and warrants monitoring.,69.7
+CHOLAFIN,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+CHOLAFIN,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+CHOLAFIN,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+CHOLAFIN,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+CHOLAFIN,Con,C11,Overall financial quality score is relatively weak.,85.0
+HEROMOTOCO,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HEROMOTOCO,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HEROMOTOCO,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HEROMOTOCO,Con,C11,Overall financial quality score is relatively weak.,85.0
+INDUSINDBK,Con,C1,Debt-to-equity ratio of 6.89 is elevated and warrants monitoring.,69.8
+INDUSINDBK,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+INDUSINDBK,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+INDUSINDBK,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+INDUSINDBK,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+INDUSINDBK,Con,C11,Overall financial quality score is relatively weak.,85.0
+BHARTIARTL,Con,C1,Debt-to-equity ratio of 2.61 is elevated and warrants monitoring.,61.2
+BHARTIARTL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BHARTIARTL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BHARTIARTL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BHARTIARTL,Con,C11,Overall financial quality score is relatively weak.,85.0
+SHREECEM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+SHREECEM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+SHREECEM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+SHREECEM,Con,C11,Overall financial quality score is relatively weak.,85.0
+SHREECEM,Con,C12,Return on equity below 10% indicates limited shareholder returns.,63.3
+IOC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+IOC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+IOC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+IOC,Con,C11,Overall financial quality score is relatively weak.,85.0
+ICICIPRULI,Con,C3,Operating margin below 10% indicates weak operating profitability.,100.0
+ICICIPRULI,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ICICIPRULI,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ICICIPRULI,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ICICIPRULI,Con,C11,Overall financial quality score is relatively weak.,85.0
+ICICIPRULI,Con,C12,Return on equity below 10% indicates limited shareholder returns.,64.5
+IRCTC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+IRCTC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+IRCTC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+IRCTC,Con,C11,Overall financial quality score is relatively weak.,85.0
+SHRIRAMFIN,Con,C1,Debt-to-equity ratio of 3.99 is elevated and warrants monitoring.,64.0
+SHRIRAMFIN,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+SHRIRAMFIN,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+SHRIRAMFIN,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+SHRIRAMFIN,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+SHRIRAMFIN,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+SHRIRAMFIN,Con,C11,Overall financial quality score is relatively weak.,85.0
+ABB,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ABB,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ABB,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ABB,Con,C11,Overall financial quality score is relatively weak.,85.0
+TVSMOTOR,Con,C1,Debt-to-equity ratio of 3.83 is elevated and warrants monitoring.,63.7
+TVSMOTOR,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+TVSMOTOR,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TVSMOTOR,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TVSMOTOR,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TVSMOTOR,Con,C11,Overall financial quality score is relatively weak.,85.0
+IRFC,Con,C1,Debt-to-equity ratio of 8.38 is elevated and warrants monitoring.,72.8
+IRFC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+IRFC,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+IRFC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+IRFC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+IRFC,Con,C11,Overall financial quality score is relatively weak.,85.0
+ICICIGI,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ICICIGI,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ICICIGI,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ICICIGI,Con,C11,Overall financial quality score is relatively weak.,85.0
+ITC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ITC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ITC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ITC,Con,C11,Overall financial quality score is relatively weak.,85.0
+ICICIBANK,Con,C1,Debt-to-equity ratio of 6.45 is elevated and warrants monitoring.,68.9
+ICICIBANK,Con,C3,Operating margin below 10% indicates weak operating profitability.,100.0
+ICICIBANK,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ICICIBANK,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+ICICIBANK,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ICICIBANK,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ICICIBANK,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIENSOL,Con,C1,Debt-to-equity ratio of 2.93 is elevated and warrants monitoring.,61.9
+ADANIENSOL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ADANIENSOL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ADANIENSOL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ADANIENSOL,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIENSOL,Con,C12,Return on equity below 10% indicates limited shareholder returns.,61.1
+HINDUNILVR,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HINDUNILVR,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HINDUNILVR,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HINDUNILVR,Con,C11,Overall financial quality score is relatively weak.,85.0
+TRENT,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TRENT,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TRENT,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TRENT,Con,C11,Overall financial quality score is relatively weak.,85.0
+JINDALSTEL,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+JINDALSTEL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+JINDALSTEL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+JINDALSTEL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+JINDALSTEL,Con,C11,Overall financial quality score is relatively weak.,85.0
+JIOFIN,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+JIOFIN,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+JIOFIN,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+JIOFIN,Con,C11,Overall financial quality score is relatively weak.,85.0
+JIOFIN,Con,C12,Return on equity below 10% indicates limited shareholder returns.,77.7
+HINDALCO,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HINDALCO,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HINDALCO,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HINDALCO,Con,C11,Overall financial quality score is relatively weak.,85.0
+HINDALCO,Con,C12,Return on equity below 10% indicates limited shareholder returns.,60.9
+PIDILITIND,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+PIDILITIND,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+PIDILITIND,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+PIDILITIND,Con,C11,Overall financial quality score is relatively weak.,85.0
+JSWENERGY,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+JSWENERGY,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+JSWENERGY,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+JSWENERGY,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+JSWENERGY,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+JSWENERGY,Con,C11,Overall financial quality score is relatively weak.,85.0
+JSWENERGY,Con,C12,Return on equity below 10% indicates limited shareholder returns.,63.4
+TORNTPHARM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TORNTPHARM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TORNTPHARM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TORNTPHARM,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIENT,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+ADANIENT,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ADANIENT,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+ADANIENT,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ADANIENT,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ADANIENT,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIENT,Con,C12,Return on equity below 10% indicates limited shareholder returns.,62.9
+RELIANCE,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+RELIANCE,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+RELIANCE,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+RELIANCE,Con,C11,Overall financial quality score is relatively weak.,85.0
+RELIANCE,Con,C12,Return on equity below 10% indicates limited shareholder returns.,60.1
+TECHM,Con,C3,Operating margin below 10% indicates weak operating profitability.,62.0
+TECHM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TECHM,Con,C7,Dividend payout above 100% may not be sustainable.,90.0
+TECHM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TECHM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TECHM,Con,C11,Overall financial quality score is relatively weak.,85.0
+TECHM,Con,C12,Return on equity below 10% indicates limited shareholder returns.,62.0
+DMART,Con,C3,Operating margin below 10% indicates weak operating profitability.,64.0
+DMART,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+DMART,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+DMART,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+DMART,Con,C11,Overall financial quality score is relatively weak.,85.0
+LTIM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+LTIM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+LTIM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+LTIM,Con,C11,Overall financial quality score is relatively weak.,85.0
+DLF,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+DLF,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+DLF,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+DLF,Con,C11,Overall financial quality score is relatively weak.,85.0
+DLF,Con,C12,Return on equity below 10% indicates limited shareholder returns.,66.2
+BRITANNIA,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BRITANNIA,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BRITANNIA,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BRITANNIA,Con,C11,Overall financial quality score is relatively weak.,85.0
+NHPC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+NHPC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+NHPC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+NHPC,Con,C11,Overall financial quality score is relatively weak.,85.0
+BAJAJ-AUTO,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BAJAJ-AUTO,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BAJAJ-AUTO,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BAJAJ-AUTO,Con,C11,Overall financial quality score is relatively weak.,85.0
+DIVISLAB,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+DIVISLAB,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+DIVISLAB,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+DIVISLAB,Con,C11,Overall financial quality score is relatively weak.,85.0
+TATAPOWER,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TATAPOWER,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+TATAPOWER,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TATAPOWER,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TATAPOWER,Con,C11,Overall financial quality score is relatively weak.,85.0
+PNB,Con,C1,Debt-to-equity ratio of 3.68 is elevated and warrants monitoring.,63.4
+PNB,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+PNB,Con,C3,Operating margin below 10% indicates weak operating profitability.,80.0
+PNB,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+PNB,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+PNB,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+PNB,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+PNB,Con,C11,Overall financial quality score is relatively weak.,85.0
+NTPC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+NTPC,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+NTPC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+NTPC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+NTPC,Con,C11,Overall financial quality score is relatively weak.,85.0
+DABUR,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+DABUR,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+DABUR,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+DABUR,Con,C11,Overall financial quality score is relatively weak.,85.0
+TATACONSUM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TATACONSUM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TATACONSUM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TATACONSUM,Con,C11,Overall financial quality score is relatively weak.,85.0
+TATACONSUM,Con,C12,Return on equity below 10% indicates limited shareholder returns.,64.9
+ONGC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ONGC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ONGC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ONGC,Con,C11,Overall financial quality score is relatively weak.,85.0
+COALINDIA,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+COALINDIA,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+COALINDIA,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+COALINDIA,Con,C11,Overall financial quality score is relatively weak.,85.0
+AXISBANK,Con,C1,Debt-to-equity ratio of 8.25 is elevated and warrants monitoring.,72.5
+AXISBANK,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+AXISBANK,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+AXISBANK,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+AXISBANK,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+AXISBANK,Con,C11,Overall financial quality score is relatively weak.,85.0
+CANBK,Con,C1,Debt-to-equity ratio of 14.87 is elevated and warrants monitoring.,85.7
+CANBK,Con,C3,Operating margin below 10% indicates weak operating profitability.,100.0
+CANBK,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+CANBK,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+CANBK,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+CANBK,Con,C11,Overall financial quality score is relatively weak.,85.0
+TATAMOTORS,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TATAMOTORS,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+TATAMOTORS,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TATAMOTORS,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TATAMOTORS,Con,C11,Overall financial quality score is relatively weak.,85.0
+PFC,Con,C1,Debt-to-equity ratio of 8.52 is elevated and warrants monitoring.,73.0
+PFC,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+PFC,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+PFC,Con,C6,Interest coverage below 1.5x indicates elevated debt servicing risk.,95.0
+PFC,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+PFC,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+PFC,Con,C11,Overall financial quality score is relatively weak.,85.0
+CIPLA,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+CIPLA,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+CIPLA,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+CIPLA,Con,C11,Overall financial quality score is relatively weak.,85.0
+BAJAJFINSV,Con,C1,Debt-to-equity ratio of 4.79 is elevated and warrants monitoring.,65.6
+BAJAJFINSV,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+BAJAJFINSV,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BAJAJFINSV,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BAJAJFINSV,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BAJAJFINSV,Con,C11,Overall financial quality score is relatively weak.,85.0
+INFY,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+INFY,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+INFY,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+INFY,Con,C11,Overall financial quality score is relatively weak.,85.0
+POWERGRID,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+POWERGRID,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+POWERGRID,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+POWERGRID,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+POWERGRID,Con,C11,Overall financial quality score is relatively weak.,85.0
+DRREDDY,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+DRREDDY,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+DRREDDY,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+DRREDDY,Con,C11,Overall financial quality score is relatively weak.,85.0
+NESTLEIND,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+NESTLEIND,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+NESTLEIND,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+NESTLEIND,Con,C11,Overall financial quality score is relatively weak.,85.0
+TATASTEEL,Con,C4,Company reported a negative profit margin in the latest year.,100.0
+TATASTEEL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TATASTEEL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TATASTEEL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TATASTEEL,Con,C11,Overall financial quality score is relatively weak.,85.0
+TATASTEEL,Con,C12,Return on equity below 10% indicates limited shareholder returns.,90.7
+HAL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+HAL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+HAL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+HAL,Con,C11,Overall financial quality score is relatively weak.,85.0
+BOSCHLTD,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BOSCHLTD,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BOSCHLTD,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BOSCHLTD,Con,C11,Overall financial quality score is relatively weak.,85.0
+M&M,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+M&M,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+M&M,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+M&M,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+M&M,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+M&M,Con,C11,Overall financial quality score is relatively weak.,85.0
+ADANIPOWER,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ADANIPOWER,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ADANIPOWER,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ADANIPOWER,Con,C11,Overall financial quality score is relatively weak.,85.0
+AMBUJACEM,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+AMBUJACEM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+AMBUJACEM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+AMBUJACEM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+AMBUJACEM,Con,C11,Overall financial quality score is relatively weak.,85.0
+GRASIM,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+GRASIM,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+GRASIM,Con,C8,Debt levels should be monitored despite remaining manageable.,70.0
+GRASIM,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+GRASIM,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+GRASIM,Con,C11,Overall financial quality score is relatively weak.,85.0
+SUNPHARMA,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+SUNPHARMA,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+SUNPHARMA,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+SUNPHARMA,Con,C11,Overall financial quality score is relatively weak.,85.0
+GODREJCP,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+GODREJCP,Con,C4,Company reported a negative profit margin in the latest year.,100.0
+GODREJCP,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+GODREJCP,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+GODREJCP,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+GODREJCP,Con,C11,Overall financial quality score is relatively weak.,85.0
+GODREJCP,Con,C12,Return on equity below 10% indicates limited shareholder returns.,88.9
+RECLTD,Con,C1,Debt-to-equity ratio of 6.42 is elevated and warrants monitoring.,68.8
+RECLTD,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+RECLTD,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+RECLTD,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+RECLTD,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+RECLTD,Con,C11,Overall financial quality score is relatively weak.,85.0
+MARUTI,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+MARUTI,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+MARUTI,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+MARUTI,Con,C11,Overall financial quality score is relatively weak.,85.0
+TCS,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+TCS,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+TCS,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+TCS,Con,C11,Overall financial quality score is relatively weak.,85.0
+GAIL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+GAIL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+GAIL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+GAIL,Con,C11,Overall financial quality score is relatively weak.,85.0
+BPCL,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BPCL,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BPCL,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BPCL,Con,C11,Overall financial quality score is relatively weak.,85.0
+INDIGO,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+INDIGO,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+INDIGO,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+INDIGO,Con,C11,Overall financial quality score is relatively weak.,85.0
+BAJAJHLDNG,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BAJAJHLDNG,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BAJAJHLDNG,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BAJAJHLDNG,Con,C11,Overall financial quality score is relatively weak.,85.0
+ASIANPAINT,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+ASIANPAINT,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+ASIANPAINT,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+ASIANPAINT,Con,C11,Overall financial quality score is relatively weak.,85.0
+MOTHERSON,Con,C3,Operating margin below 10% indicates weak operating profitability.,62.0
+MOTHERSON,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+MOTHERSON,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+MOTHERSON,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+MOTHERSON,Con,C11,Overall financial quality score is relatively weak.,85.0
+EICHERMOT,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+EICHERMOT,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+EICHERMOT,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+EICHERMOT,Con,C11,Overall financial quality score is relatively weak.,85.0
+NAUKRI,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+NAUKRI,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+NAUKRI,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+NAUKRI,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+NAUKRI,Con,C11,Overall financial quality score is relatively weak.,85.0
+NAUKRI,Con,C12,Return on equity below 10% indicates limited shareholder returns.,76.1
+BANKBARODA,Con,C1,Debt-to-equity ratio of 12.14 is elevated and warrants monitoring.,80.3
+BANKBARODA,Con,C2,Negative free cash flow raises concern about cash generation quality.,90.0
+BANKBARODA,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+BANKBARODA,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+BANKBARODA,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+BANKBARODA,Con,C11,Overall financial quality score is relatively weak.,85.0
+APOLLOHOSP,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+APOLLOHOSP,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+APOLLOHOSP,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+APOLLOHOSP,Con,C11,Overall financial quality score is relatively weak.,85.0
+SIEMENS,Con,C5,Revenue growth below 5% over five years suggests weak business momentum.,85.0
+SIEMENS,Con,C9,Weak EPS growth indicates slowing earnings momentum.,80.0
+SIEMENS,Con,C10,Return on capital employed below 10% suggests inefficient capital allocation.,90.0
+SIEMENS,Con,C11,Overall financial quality score is relatively weak.,85.0

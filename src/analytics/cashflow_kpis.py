@@ -332,7 +332,82 @@ def capital_allocation_pattern(
 # --------------------------------------------------
 # Combined Cash Flow KPI Engine
 # --------------------------------------------------
+# --------------------------------------------------
+# Distress Signal
+# --------------------------------------------------
 
+def distress_signal(
+    operating_activity: float,
+    financing_activity: float
+) -> bool:
+
+    if pd.isna(operating_activity):
+        return False
+
+    if pd.isna(financing_activity):
+        return False
+
+    return (
+        operating_activity < 0
+        and financing_activity > 0
+    )
+# --------------------------------------------------
+# Deleveraging Flag
+# --------------------------------------------------
+
+def deleveraging_flag(
+    current_borrowings: float,
+    previous_borrowings: float,
+    financing_activity: float
+) -> bool:
+
+    if pd.isna(current_borrowings):
+        return False
+
+    if pd.isna(previous_borrowings):
+        return False
+
+    if pd.isna(financing_activity):
+        return False
+
+    return (
+        financing_activity < 0
+        and current_borrowings < previous_borrowings
+    )
+# --------------------------------------------------
+# FCF CAGR
+# --------------------------------------------------
+
+def fcf_cagr(history):
+    """
+    Calculates 5-year CAGR of Free Cash Flow.
+    Returns None if CAGR cannot be computed.
+    """
+
+    history = [x for x in history if pd.notna(x)]
+
+    if len(history) < 5:
+        return None
+
+    start = history[-5]
+    end = history[-1]
+
+    # CAGR is not meaningful if either value is non-positive
+    if start <= 0 or end <= 0:
+        return None
+
+    years = 4
+
+    try:
+        return round(
+            ((end / start) ** (1 / years) - 1) * 100,
+            2
+        )
+    except Exception:
+        logger.info(
+            f"Unable to calculate FCF CAGR. Start={start}, End={end}"
+        )
+        return None
 def calculate_cashflow_metrics(
     row: dict
 ) -> dict:
@@ -377,8 +452,14 @@ def calculate_cashflow_metrics(
             row.get("investing_activity", 0),
             row.get("financing_activity", 0),
             quality["score"]
-        )
-    )
+        ))
+    metrics["distress_flag"] = distress_signal(
+    row.get("operating_activity", 0),
+    row.get("financing_activity", 0)
+)
+
+
+    
 
     return metrics
 
@@ -446,6 +527,321 @@ def generate_capital_allocation_csv(
 
     )
 
+# =====================================================
+# Prepare Latest Financial Snapshot
+# =====================================================
+
+def prepare_latest_snapshot(
+    cashflow_df,
+    ratios_df,
+    pnl_df
+):
+
+    latest_cf = (
+        cashflow_df
+        .sort_values("year")
+        .groupby("company_id")
+        .tail(1)
+    )
+
+    latest_ratios = (
+        ratios_df
+        .sort_values("year")
+        .groupby("company_id")
+        .tail(1)
+    )
+
+    latest_pnl = (
+        pnl_df
+        .sort_values("year")
+        .groupby("company_id")
+        .tail(1)
+    )
+
+    latest = (
+        latest_cf
+
+        .merge(
+            latest_ratios,
+            on=["company_id", "year"],
+            how="left",
+            suffixes=("", "_ratio")
+        )
+
+        .merge(
+            latest_pnl,
+            on=["company_id", "year"],
+            how="left",
+            suffixes=("", "_pnl")
+        )
+    )
+
+    return latest
+# =====================================================
+# FCF CAGR (5 Years)
+# =====================================================
+
+def calculate_fcf_cagr(ratios_df):
+
+    records = []
+
+    for company, group in ratios_df.groupby("company_id"):
+
+        group = (
+            group
+            .sort_values("year")
+            .tail(5)
+        )
+
+        history = (
+            group["free_cash_flow_cr"]
+            .dropna()
+            .tolist()
+        )
+
+        cagr = fcf_cagr(history)
+
+        records.append({
+
+            "company_id": company,
+
+            "fcf_cagr_5yr": cagr
+
+        })
+
+    return pd.DataFrame(records)
+# =====================================================
+# Deleveraging Detection
+# =====================================================
+
+def calculate_deleveraging_flags(
+    cashflow_df,
+    ratios_df
+):
+
+    records = []
+
+    latest_cf = (
+        cashflow_df
+        .sort_values("year")
+        .groupby("company_id")
+        .tail(1)
+    )
+
+    for company, group in ratios_df.groupby("company_id"):
+
+        group = group.sort_values("year")
+
+        if len(group) < 2:
+            continue
+
+        current = group.iloc[-1]
+        previous = group.iloc[-2]
+
+        cf = latest_cf[
+            latest_cf.company_id == company
+        ]
+
+        if cf.empty:
+            continue
+
+        financing = cf.iloc[0]["financing_activity"]
+
+        flag = (
+
+            financing < 0
+
+            and
+
+            current["total_debt_cr"] < previous["total_debt_cr"]
+
+        )
+
+        records.append({
+
+            "company_id": company,
+
+            "deleveraging_flag": flag
+
+        })
+
+    return pd.DataFrame(records)
+# =====================================================
+# Cash Flow Intelligence Dataset
+# =====================================================
+
+def build_cashflow_intelligence(
+
+    latest,
+
+    fcf_df,
+
+    deleveraging_df
+
+):
+
+    df = (
+
+        latest
+
+        .merge(
+
+            fcf_df,
+
+            on="company_id",
+
+            how="left"
+
+        )
+
+        .merge(
+
+            deleveraging_df,
+
+            on="company_id",
+
+            how="left"
+
+        )
+
+    )
+
+    return df
+# =====================================================
+# Export Cash Flow Intelligence
+# =====================================================
+
+def export_cashflow_intelligence(
+    intelligence_df,
+    output_file="output/cashflow_intelligence.xlsx"
+):
+
+    columns = [
+
+        "company_id",
+        "broad_sector",
+        "sub_sector",
+        "market_cap_category",
+        "cfo_quality_score",
+        "cfo_quality_label",
+        "capex_intensity_pct",
+        "capex_label",
+        "fcf_cagr_5yr",
+        "fcf_conversion_rate",
+        "distress_flag",
+        "deleveraging_flag",
+        "capital_allocation_pattern"
+
+    ]
+
+    export_df = intelligence_df.copy()
+
+    for col in columns:
+        if col not in export_df.columns:
+            export_df[col] = None
+
+    export_df = export_df[columns]
+
+    export_df.to_excel(
+        output_file,
+        index=False
+    )
+
+    logger.info(
+        f"Cash Flow Intelligence exported : {output_file}"
+    )
+
+    print("\nSaved :", output_file)
+    print("Companies :", len(export_df))
+# =====================================================
+# Export Distress Alerts
+# =====================================================
+
+def export_distress_alerts(
+    intelligence_df,
+    output_file="output/distress_alerts.csv"
+):
+
+    alerts = intelligence_df[
+
+        intelligence_df["distress_flag"] == True
+
+    ].copy()
+
+    columns = [
+
+        "company_id",
+        "operating_activity",
+        "financing_activity",
+        "net_profit"
+
+    ]
+
+    for col in columns:
+        if col not in alerts.columns:
+            alerts[col] = None
+
+    alerts = alerts[columns]
+
+    alerts.to_csv(
+        output_file,
+        index=False
+    )
+
+    logger.info(
+        f"Distress Alerts exported : {output_file}"
+    )
+
+    print("Saved :", output_file)
+    print("Alerts :", len(alerts))
+# =====================================================
+# Validation
+# =====================================================
+
+def validate_outputs(
+    intelligence_df
+):
+
+    print("\n" + "=" * 70)
+    print("DAY 31 VALIDATION")
+    print("=" * 70)
+
+    print()
+
+    print("Companies Processed :",
+          intelligence_df["company_id"].nunique())
+
+    print()
+
+    print("Distress Companies :",
+          intelligence_df["distress_flag"].sum())
+
+    print()
+
+    print("Deleveraging Companies :",
+          intelligence_df["deleveraging_flag"].sum())
+
+    print()
+
+    print("Average CFO Quality Score :",
+          round(
+              intelligence_df["cfo_quality_score"].dropna().mean(),
+              2
+          ))
+
+    print()
+
+    print("Capital Allocation")
+
+    print(
+        intelligence_df[
+            "capital_allocation_pattern"
+        ].value_counts()
+    )
+
+    print()
+
+    print("PASS : Cash Flow Intelligence Generated")
 
 # --------------------------------------------------
 # Demo
@@ -518,6 +914,13 @@ __all__ = [
 
     "calculate_cashflow_metrics",
 
-    "generate_capital_allocation_csv"
+    "generate_capital_allocation_csv",
+    "prepare_latest_snapshot",
+    "calculate_fcf_cagr",
+    "calculate_deleveraging_flags",
+    "build_cashflow_intelligence",
+    "export_cashflow_intelligence",
+    "export_distress_alerts",
+    "validate_outputs"
 
 ]
