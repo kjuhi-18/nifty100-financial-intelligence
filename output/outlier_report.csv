@@ -1,0 +1,10 @@
+company_id,company_name,broad_sector,metric,value,z_score
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,return_on_equity_pct,892.57,3.47
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,operating_profit_margin_pct,16331.0,3.3
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,asset_turnover,56.39,3.47
+ADANIGREEN,Adani Green Energy Ltd,Energy,debt_to_equity,6.6,3.16
+PNB,Punjab National Bank,Financials,return_on_equity_pct,61.32,3.33
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,net_profit_margin_pct,432.73,4.39
+HDFCBANK,HDFC Bank Ltd,Financials,operating_profit_margin_pct,-44685.0,-3.71
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd,Financials,interest_coverage,3764.5,3.5
+PNB,Punjab National Bank,Financials,asset_turnover,1.51,4.23
