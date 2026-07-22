@@ -3,7 +3,7 @@ import time
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from src.api.routers import screener
 from src.api.routers import (
     health,
     companies,
@@ -28,7 +28,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
+app.include_router(
+    screener.router,
+    prefix="/api/v1"
+)
 @app.middleware("http")
 async def log_requests(request, call_next):
     start = time.time()
