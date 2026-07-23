@@ -25,10 +25,14 @@ import re
 
 
 def normalize_year(year_value):
-    if "TTM" in year_value.upper():
+
+    # Handle null values first
+    if pd.isna(year_value):
         return None
 
-    if pd.isna(year_value):
+    year_value = str(year_value).strip()
+
+    if "TTM" in year_value.upper():
         return None
 
     year_value = str(year_value).strip()

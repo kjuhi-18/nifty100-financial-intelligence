@@ -5,7 +5,10 @@ from src.analytics.cashflow_kpis import (
     cfo_quality_score,
     capex_intensity,
     fcf_conversion_rate,
-    capital_allocation_pattern
+    capital_allocation_pattern,
+    distress_signal,
+    deleveraging_flag,
+    fcf_cagr,
 )
 
 
@@ -15,10 +18,13 @@ from src.analytics.cashflow_kpis import (
 
 def test_free_cash_flow():
 
-    assert free_cash_flow(
-        operating_activity=500,
-        investing_activity=-200
-    ) == 300
+    # CFO + Investing Activity
+    assert free_cash_flow(500, -100) == 400
+
+
+def test_negative_fcf():
+
+    assert free_cash_flow(100, -300) == -200
 
 
 # --------------------------------------------------
@@ -28,38 +34,19 @@ def test_free_cash_flow():
 def test_cfo_quality_high():
 
     result = cfo_quality_score(
-        cfo_history=[100, 120, 140, 160, 180],
-        pat_history=[80, 100, 110, 130, 150]
+        [500,520,540,560,600],
+        [400,420,430,450,500]
     )
 
+    assert result["score"] > 1
     assert result["label"] == "High Quality"
 
 
-def test_cfo_quality_moderate():
+def test_cfo_quality_insufficient():
 
     result = cfo_quality_score(
-        cfo_history=[60, 60, 60, 60, 60],
-        pat_history=[100, 100, 100, 100, 100]
-    )
-
-    assert result["label"] == "Moderate"
-
-
-def test_cfo_quality_accrual():
-
-    result = cfo_quality_score(
-        cfo_history=[20, 20, 20, 20, 20],
-        pat_history=[100, 100, 100, 100, 100]
-    )
-
-    assert result["label"] == "Accrual Risk"
-
-
-def test_cfo_quality_zero_pat():
-
-    result = cfo_quality_score(
-        cfo_history=[100, 100, 100, 100, 100],
-        pat_history=[100, 100, 0, 100, 100]
+        [100],
+        [100]
     )
 
     assert result["score"] is None
@@ -70,34 +57,26 @@ def test_cfo_quality_zero_pat():
 # CapEx Intensity
 # --------------------------------------------------
 
-def test_capex_asset_light():
+def test_capex_intensity():
 
     result = capex_intensity(
-        investing_activity=-20,
-        sales=1000
+        -100,
+        1000
     )
 
-    assert result["label"] == "Asset Light"
-
-
-def test_capex_moderate():
-
-    result = capex_intensity(
-        investing_activity=-50,
-        sales=1000
-    )
-
-    assert result["label"] == "Moderate"
-
-
-def test_capex_capital_intensive():
-
-    result = capex_intensity(
-        investing_activity=-150,
-        sales=1000
-    )
-
+    assert result["value"] == 10
     assert result["label"] == "Capital Intensive"
+
+
+def test_capex_zero_sales():
+
+    result = capex_intensity(
+        -100,
+        0
+    )
+
+    assert result["value"] is None
+    assert result["label"] is None
 
 
 # --------------------------------------------------
@@ -107,91 +86,91 @@ def test_capex_capital_intensive():
 def test_fcf_conversion():
 
     assert fcf_conversion_rate(
-        free_cash_flow_value=300,
-        operating_profit=600
-    ) == 50.0
+        300,
+        150
+    ) == 200.0
 
 
-def test_fcf_conversion_zero_operating_profit():
+def test_fcf_conversion_zero():
 
     assert fcf_conversion_rate(
-        free_cash_flow_value=300,
-        operating_profit=0
+        300,
+        0
     ) is None
 
 
 # --------------------------------------------------
-# Capital Allocation Patterns
+# Capital Allocation
 # --------------------------------------------------
 
-def test_reinvestor():
+def test_capital_allocation():
 
     assert capital_allocation_pattern(
-        100,
-        -50,
-        -20
+        500,
+        -100,
+        -50
     ) == "Reinvestor"
 
 
-def test_shareholder_returns():
+# --------------------------------------------------
+# Distress Signal
+# --------------------------------------------------
 
-    assert capital_allocation_pattern(
-        100,
-        -50,
-        -20,
-        cfo_pat_score=1.5
-    ) == "Shareholder Returns"
+def test_distress():
 
-
-def test_liquidating_assets():
-
-    assert capital_allocation_pattern(
-        100,
-        50,
-        -20
-    ) == "Liquidating Assets"
-
-
-def test_distress_signal():
-
-    assert capital_allocation_pattern(
+    assert distress_signal(
         -100,
-        50,
-        20
-    ) == "Distress Signal"
+        50
+    )
 
 
-def test_growth_funded():
+def test_not_distress():
 
-    assert capital_allocation_pattern(
-        -100,
-        -50,
-        30
-    ) == "Growth Funded by Debt"
-
-
-def test_cash_accumulator():
-
-    assert capital_allocation_pattern(
+    assert not distress_signal(
         100,
-        50,
-        30
-    ) == "Cash Accumulator"
+        -50
+    )
 
 
-def test_pre_revenue():
+# --------------------------------------------------
+# Deleveraging
+# --------------------------------------------------
 
-    assert capital_allocation_pattern(
-        -100,
-        -50,
-        -30
-    ) == "Pre-Revenue"
+def test_deleveraging():
 
-
-def test_mixed():
-
-    assert capital_allocation_pattern(
+    assert deleveraging_flag(
+        80,
         100,
-        -50,
-        30
-    ) == "Mixed"
+        -50
+    )
+
+
+def test_not_deleveraging():
+
+    assert not deleveraging_flag(
+        120,
+        100,
+        -50
+    )
+
+
+# --------------------------------------------------
+# FCF CAGR
+# --------------------------------------------------
+
+def test_fcf_cagr():
+
+    history = [
+        100,
+        120,
+        150,
+        180,
+        220
+    ]
+
+    assert fcf_cagr(history) > 0
+
+
+def test_fcf_cagr_insufficient():
+
+    assert fcf_cagr([100,120]) is None

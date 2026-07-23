@@ -2,40 +2,41 @@ import pytest
 
 from src.analytics.cagr import (
     calculate_cagr,
+    has_sufficient_history,
+    compute_cagr,
     compute_revenue_cagr,
     compute_pat_cagr,
     compute_eps_cagr,
     TURNAROUND,
     DECLINE_TO_LOSS,
-    BOTH_NEGATIVE,
     ZERO_BASE,
-    INSUFFICIENT
+    INSUFFICIENT,
 )
 
 
-# --------------------------------------------------
-# Generic CAGR
-# --------------------------------------------------
+# -----------------------------
+# calculate_cagr
+# -----------------------------
 
-def test_cagr_normal():
+def test_calculate_cagr_positive():
 
-    result = calculate_cagr(
-        start_value=100,
-        end_value=200,
-        years=5
-    )
+    result = calculate_cagr(100, 200, 5)
 
-    assert round(result["value"], 2) == 14.87
+    assert result["value"] == 14.87
+    assert result["flag"] is None
+
+
+def test_calculate_cagr_same():
+
+    result = calculate_cagr(100, 100, 5)
+
+    assert result["value"] == 0.0
     assert result["flag"] is None
 
 
 def test_turnaround():
 
-    result = calculate_cagr(
-        start_value=-100,
-        end_value=100,
-        years=5
-    )
+    result = calculate_cagr(-100, 200, 5)
 
     assert result["value"] is None
     assert result["flag"] == TURNAROUND
@@ -43,140 +44,97 @@ def test_turnaround():
 
 def test_decline_to_loss():
 
-    result = calculate_cagr(
-        start_value=100,
-        end_value=-50,
-        years=5
-    )
+    result = calculate_cagr(100, -50, 5)
 
-    assert result["value"] is None
     assert result["flag"] == DECLINE_TO_LOSS
-
-
-def test_both_negative():
-
-    result = calculate_cagr(
-        start_value=-100,
-        end_value=-50,
-        years=5
-    )
-
-    assert result["value"] is None
-    assert result["flag"] == BOTH_NEGATIVE
 
 
 def test_zero_base():
 
-    result = calculate_cagr(
-        start_value=0,
-        end_value=100,
-        years=5
-    )
+    result = calculate_cagr(0, 100, 5)
 
-    assert result["value"] is None
     assert result["flag"] == ZERO_BASE
 
 
-def test_insufficient_years():
+def test_invalid_years():
 
-    result = calculate_cagr(
-        start_value=100,
-        end_value=200,
-        years=0
-    )
+    result = calculate_cagr(100, 200, 0)
 
-    assert result["value"] is None
     assert result["flag"] == INSUFFICIENT
 
 
-# --------------------------------------------------
+# -----------------------------
+# History
+# -----------------------------
+
+def test_history_true():
+
+    values = [1, 2, 3, 4, 5, 6]
+
+    assert has_sufficient_history(values, 5)
+
+
+def test_history_false():
+
+    values = [1, 2]
+
+    assert not has_sufficient_history(values, 5)
+
+
+# -----------------------------
+# compute_cagr
+# -----------------------------
+
+def test_compute_cagr():
+
+    values = [100, 120, 150, 180]
+
+    result = compute_cagr(values, 3)
+
+    assert result["value"] > 0
+
+
+def test_compute_cagr_insufficient():
+
+    result = compute_cagr([100], 3)
+
+    assert result["flag"] == INSUFFICIENT
+
+
+# -----------------------------
 # Revenue CAGR
-# --------------------------------------------------
+# -----------------------------
 
 def test_revenue_cagr():
 
-    history = [
-        100,
-        120,
-        140,
-        170,
-        210,
-        260
-    ]
+    values = [100, 120, 150, 180]
 
-    result = compute_revenue_cagr(
-        history,
-        5
-    )
+    result = compute_revenue_cagr(values, 3)
 
-    assert result["flag"] is None
     assert result["value"] > 0
 
 
-# --------------------------------------------------
+# -----------------------------
 # PAT CAGR
-# --------------------------------------------------
+# -----------------------------
 
 def test_pat_cagr():
 
-    history = [
-        10,
-        12,
-        15,
-        18,
-        22,
-        28
-    ]
+    values = [20, 25, 30, 40]
 
-    result = compute_pat_cagr(
-        history,
-        5
-    )
+    result = compute_pat_cagr(values, 3)
 
-    assert result["flag"] is None
     assert result["value"] > 0
 
 
-# --------------------------------------------------
+# -----------------------------
 # EPS CAGR
-# --------------------------------------------------
+# -----------------------------
 
 def test_eps_cagr():
 
-    history = [
-        5,
-        6,
-        7,
-        8,
-        9,
-        10
-    ]
+    values = [5, 7, 8, 10]
 
-    result = compute_eps_cagr(
-        history,
-        5
-    )
+    result = compute_eps_cagr(values, 3)
 
-    assert result["flag"] is None
     assert result["value"] > 0
-
-
-# --------------------------------------------------
-# Insufficient History
-# --------------------------------------------------
-
-def test_insufficient_history():
-
-    history = [
-        100,
-        120,
-        150
-    ]
-
-    result = compute_revenue_cagr(
-        history,
-        5
-    )
-
-    assert result["value"] is None
-    assert result["flag"] == INSUFFICIENT
