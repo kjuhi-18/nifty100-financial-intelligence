@@ -1,7 +1,6 @@
-import streamlit as st
 import pandas as pd
 import plotly.express as px
-
+import streamlit as st
 from utils.db import *
 
 st.title("💰 Capital Allocation Map")
@@ -36,6 +35,7 @@ conn.close()
 # Capital Allocation Pattern
 # ==========================================================
 
+
 def classify(row):
 
     if row["debt_to_equity"] <= 0.30 and row["free_cash_flow_cr"] > 0:
@@ -62,6 +62,7 @@ def classify(row):
     else:
         return "Balanced"
 
+
 df["capital_pattern"] = df.apply(classify, axis=1)
 
 # ==========================================================
@@ -71,36 +72,16 @@ df["capital_pattern"] = df.apply(classify, axis=1)
 st.subheader("Capital Allocation Treemap")
 
 fig = px.treemap(
-
     df,
-
     path=["capital_pattern", "company_id"],
-
     values="free_cash_flow_cr",
-
     color="return_on_equity_pct",
-
-    hover_data=[
-
-        "company_name",
-
-        "debt_to_equity",
-
-        "revenue_cagr_5yr"
-
-    ]
-
+    hover_data=["company_name", "debt_to_equity", "revenue_cagr_5yr"],
 )
 
 fig.update_layout(height=700)
 
-st.plotly_chart(
-
-    fig,
-
-    use_container_width=True
-
-)
+st.plotly_chart(fig, use_container_width=True)
 
 # ==========================================================
 # Pattern Explorer
@@ -108,85 +89,41 @@ st.plotly_chart(
 
 patterns = sorted(df["capital_pattern"].unique())
 
-selected = st.selectbox(
+selected = st.selectbox("Select Capital Allocation Pattern", patterns)
 
-    "Select Capital Allocation Pattern",
-
-    patterns
-
-)
-
-companies = df[
-
-    df["capital_pattern"] == selected
-
-].sort_values(
-
-    "return_on_equity_pct",
-
-    ascending=False
-
+companies = df[df["capital_pattern"] == selected].sort_values(
+    "return_on_equity_pct", ascending=False
 )
 
 st.subheader(f"{selected} Companies")
 
 st.dataframe(
-
     companies[
-
         [
-
             "company_id",
-
             "company_name",
-
             "return_on_equity_pct",
-
             "debt_to_equity",
-
             "free_cash_flow_cr",
-
             "revenue_cagr_5yr",
-
-            "pat_cagr_5yr"
-
+            "pat_cagr_5yr",
         ]
-
     ],
-
     use_container_width=True,
-
-    hide_index=True
-
+    hide_index=True,
 )
 
 # ==========================================================
 # Summary
 # ==========================================================
 
-summary = (
-
-    df.groupby("capital_pattern")
-
-    .size()
-
-    .reset_index(name="Companies")
-
-)
+summary = df.groupby("capital_pattern").size().reset_index(name="Companies")
 
 st.markdown("---")
 
 st.subheader("Pattern Distribution")
 
-st.dataframe(
-
-    summary,
-
-    use_container_width=True,
-
-    hide_index=True
-
-)
+st.dataframe(summary, use_container_width=True, hide_index=True)
 
 # ==========================================================
 # Validation
